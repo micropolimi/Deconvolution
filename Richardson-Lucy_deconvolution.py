@@ -86,6 +86,6 @@ else:
         plt.figure()
         plt.imshow(deconvoluted_image[IMG_PLANE,:,:], cmap="gray")
         
-deconvoluted_image = np.array(deconvoluted_image, dtype=np.float32)
+deconvoluted_image = np.array(deconvoluted_image, dtype=np.int16)
 
 tif.imsave(full_name + '_deconvoluted_iter' + str(ITERATIONS) + '.tif', deconvoluted_image, imagej = True, resolution = (10, 10), metadata = {'spacing': 0.2, 'unit': 'um', 'mode': color_mode, 'channels': number_of_channels})
